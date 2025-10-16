@@ -108,15 +108,15 @@ class Usuario{
         $imagem){
         $senha = password_hash($senha, PASSWORD_DEFAULT);
         $sql = "INSERT INTO tbl_usuario (nome_usuario, email_usuario, 
-        senha_usuario, tipo_usuario, status_usuario, foto_usuario) 
-                VALUES (:nome, :email, :senha, :tipo, :status, :foto)";
+        senha_usuario, tipo_usuario, status_usuario) 
+                VALUES (:nome, :email, :senha, :tipo, :status)";
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam(':nome', $nome);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':senha', $senha);
         $stmt->bindParam(':tipo', $tipo);
         $stmt->bindParam(':status', $status);
-        $stmt->bindParam(':foto', $imagem);
+
         if($stmt->execute()){
             return $this->db->lastInsertId();
         }else{

@@ -12,7 +12,7 @@ class Config
             'mysql' => 
                   [
                     'host' => 'localhost',
-                    'db_name' => 'kipedreiro',
+                    'db_name' => 'ki_pedreiro',
                     'username' => 'root',
                     'password' => NULL,
                     'charset' => 'utf8',
