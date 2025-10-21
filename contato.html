@@ -78,5 +78,17 @@
             </div>
         </div>
     </footer>
+    <script>
+document.addEventListener('DOMContentLoaded', async function() {
+
+let response = await fetch("https://openlibrary.org/search.json?q=the%2Blord%2Bof%2Bthe%2Brings", { 
+  method: "GET",
+});
+
+let data = await response.json();
+console.log(data);
+
+});
+    </script>
 </body>
 </html>

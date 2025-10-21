@@ -79,7 +79,7 @@
         const container = document.querySelector('.servicos__lista');
         if (!container) return;
         container.innerHTML = '<h3>Carregando serviços...</h3>';
-        fetch('backend/api/servicos.php')
+        fetch('/backend/api/servicos')
             .then(response => {
                 if(!response.ok) {
                     throw new Error('Falha ao carregar dados da rede');
@@ -87,11 +87,13 @@
                 return response.json();
             })
             .then(json => {
-                if(json.status === 'success' || !json.data) {
+                if(json.status !== 'success' || !json.data) {
                     throw new Error('Api retornou um erro:' + (json.message || 'Formato inválido'));
                 }
                 container.innerHTML = '';
+               
                 json.data.forEach(servico => {
+                     
                     const cardHTML = `
                         <div class="card" data-service="${servico.nome_servico.toLowerCase()}">
                             <div class="card__frente" style="background-image: url('${servico.caminho_imagem}');">
@@ -108,12 +110,10 @@
             })
             .catch(error => {
                 console.error('Erro ao carregar serviços:', error);
-                container.innerHTML = `<p style="color: red;>"Não foi possivel carregar os serviços no momento. Tente novamente mais tarde.</p>`;
+                container.innerHTML = '<p style="color: red;>"Não foi possivel carregar os serviços no momento. Tente novamente mais tarde.</p>';
             });
     });
 </script>
-
-
 
 </body>
 </html>
