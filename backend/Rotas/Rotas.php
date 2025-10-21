@@ -23,6 +23,14 @@ class Rotas
 
                 '/esqueci-senha' => 'AuthController@viewEsqueciSenha',
                 '/reseta-senha/{token}' => 'AuthController@viewFormTrocaSenha',
+            
+            '/servico/listar' => 'ServicoController@viewListarServicos',
+            '/servico/listar/{pagina}' => 'ServicoController@viewListarServicos',
+            '/servico/criar' => 'ServicoController@viewCriarServico',
+            '/api/servicos' => 'PublicApiController@getServicos',
+            '/servico/editar/{id}' => 'ServicoController@viewEditarServico',
+            '/servico/excluir/{id}' => 'ServicoController@viewExcluirServico',
+
             ],
             
             "POST" => [
@@ -33,8 +41,14 @@ class Rotas
                 '/register' => 'AuthController@cadastrarUsuario',
                 '/login' => 'AuthController@authenticar',
 
+                "/servico/salvar" => "ServicoController@salvarServico",
+                "/servico/atualizar" => "ServicoController@atualizarServico",
+                "/servico/deletar" => "ServicoController@deletarServico",
+
                 '/esqueci-senha' => 'AuthController@enviarLinkDoEmail',
                 '/reseta-senha' => 'AuthController@resetaSenha',
+
+
             ]
         ];
     }
