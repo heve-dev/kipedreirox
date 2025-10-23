@@ -1,6 +1,8 @@
 <?php
 namespace App\Kipedreiro\Models;
 
+use PDO;
+
 class Endereco{
     private $id_endereco;
     private $cep_endereco;

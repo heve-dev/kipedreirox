@@ -11,10 +11,10 @@ class Config
             'driver' => 'mysql',
             'mysql' => 
                   [
-                    'host' => '216.172.172.207',
-                    'db_name' => 'faust537_time2_ti29',
-                    'username' => 'faust537_time2_ti29',
-                    'password' => 'YN#_h()w$;ZF',
+                    'host' => 'localhost',
+                    'db_name' => 'ki_pedreiro',
+                    'username' => 'root',
+                    'password' => '',
                     'charset' => 'utf8',
                     'port' => NULL,
                 ],

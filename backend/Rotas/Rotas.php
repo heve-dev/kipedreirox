@@ -31,9 +31,13 @@ class Rotas
             '/servico/editar/{id}' => 'ServicoController@viewEditarServico',
             '/servico/excluir/{id}' => 'ServicoController@viewExcluirServico',
 
+            '/api/produtos' => 'PublicApiController@getProdutos',
+
             ],
             
             "POST" => [
+                '/api/pedidos' => 'PublicApiController@salvarPedido',
+
                 "/usuario/salvar" => "UsuarioController@salvarUsuario",
                 "/usuario/atualizar/{id}" => "UsuarioController@atualizarUsuario",
                 "/usuario/deletar/{id}" => "UsuarioController@deletarUsuario",
